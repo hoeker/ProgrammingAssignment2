@@ -1,11 +1,18 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Returns a CacheMatrix object--a list containing:
+## CacheMatrix returns a list containing:
 ##   set(x)       -- a function to set the matrix
 ##   get()        -- a function to get the matrix
 ##   setinverse() -- a function to set the inverse of the matrix
 ##   getinverse() -- a function to get the inverse of the matrix
+##
+##
+## cacheSolve solves for the inverse of a CacheMatrix object.
+## This function caches the result and return the cached
+## result if called multiple times.
+
+
+
+## Creates and returns a CacheMatrix object
+## (ie. a list of functions)
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -31,9 +38,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Solves for the inverse of a CacheMatrix object.
-## This function caches the result and return the cached
-## result if called multiple times.
+
+## Returns the inverse of a CacheMatrix.
+## Uses a cached result if available.
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
